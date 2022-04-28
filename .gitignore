@@ -1,0 +1,9 @@
+*.zip
+.idea/
+venv/
+media/
+ooh/
+static/
+manage.py
+PlaceApps.py
+migrations
