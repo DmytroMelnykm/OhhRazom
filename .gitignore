@@ -1,5 +1,6 @@
 *.zip
 .idea/
+__pycache__/
 venv/
 media/
 ooh/
