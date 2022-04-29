@@ -11,7 +11,7 @@ from .models import *
 import datetime
 import traceback
 from openpyxl import *
-from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
+from openpyxl.styles import PatternFill, Border, Side, Alignment
 
 
 class WorkAdminPage(View):
