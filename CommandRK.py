@@ -175,6 +175,8 @@ class CommandWork(View):
             except Exception as e:
                 print('Ошибка:\n', traceback.format_exc())
                 messages.success(request, 'Ошибка')
+            finally:
+                return HttpResponseRedirect(reverse_lazy('CurrentRK'))
         elif utils == "ChangeLenguage":
             request.session['Currentpage'] = "CurrentRK"
             request.session['inLenluage'] = request.POST.get('Len')
