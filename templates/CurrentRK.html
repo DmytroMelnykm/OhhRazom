@@ -250,7 +250,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Охваты</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Reach and Frequency</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -287,13 +287,31 @@
                                 {% endif %}
                             </th>
                             <th>
-                                Reach
+                                {% if lenguage == 'RU' %}
+                                    {{BasicName.Reach.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{BasicName.Reach.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{BasicName.Reach.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{BasicName.Period.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{BasicName.Period.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{BasicName.Period.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{BasicName.Fruqency.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{BasicName.Fruqency.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{BasicName.Fruqency.UA}}
+                                {% endif %}
                             </th>
                         </tr>
                 </thead>
@@ -355,6 +373,18 @@
                 {{ BasicName.ButtonResetColor.EN }}
             {% elif lenguage == 'UA' %}
                 {{ BasicName.ButtonResetColor.UA }}
+            {% endif %}
+        </button>
+          {% csrf_token %}
+      </form>
+      <form action = "ToExcel" class = "formout" method = "POST">
+        <button class="btn btn-primary" name = "Excel">
+            {% if lenguage == 'RU' %}
+                {{ BasicName.ButtonExportExcel.RU }}
+            {% elif lenguage == 'EN' %}
+                {{ BasicName.ButtonExportExcel.EN }}
+            {% elif lenguage == 'UA' %}
+                {{ BasicName.ButtonExportExcel.UA }}
             {% endif %}
         </button>
           {% csrf_token %}
@@ -446,7 +476,7 @@
             {% endif %}
         </button>
       <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Reach">
-          RF
+          Reach and Frequency
         </button>
       <div class="pt-2">
           {% if lenguage == 'RU' %}
@@ -467,7 +497,36 @@
             <input type="button" class="btn btn-primary" value="{{ BasicName.ButtonHiden.UA }}" id = "hide_but">
           <input class="menuu_cen" type="text" placeholder="{{ BasicName.PlaceholderSearch.UA }}" id="search-text" onkeyup="tableSearch()">
         {% endif %}
-
+        <select id = "DropforSearch">
+                    {% if lenguage == 'RU' %}
+                        <option selected>{{TranslateBody.SelectChoose.RU}}</option>
+                          <option value="1">{{tableNameHead.city.RU}}</option>
+                          <option value="4">doors</option>
+                          <option value="5">{{tableNameHead.SelfNumberCont.RU}}</option>
+                          <option value="6">{{tableNameHead.Razom_number.RU}}</option>
+                          <option value="3">{{tableNameHead.adress.RU}}</option>
+                          <option value="2">{{tableNameHead.contactor.RU}}</option>
+                          <option value="12">{{tableNameHead.story.RU}}</option>
+                    {% elif lenguage == 'EN' %}
+                        <option selected>{{TranslateBody.SelectChoose.EN}}</option>
+                          <option value="1">{{tableNameHead.city.EN}}</option>
+                          <option value="4">doors</option>
+                          <option value="5">{{tableNameHead.SelfNumberCont.EN}}</option>
+                          <option value="6">{{tableNameHead.Razom_number.EN}}</option>
+                          <option value="3">{{tableNameHead.adress.EN}}</option>
+                          <option value="2">{{tableNameHead.contactor.EN}}</option>
+                          <option value="12">{{tableNameHead.story.EN}}</option>
+                    {% elif lenguage == 'UA' %}
+                        <option selected>{{TranslateBody.SelectChoose.UA}}</option>
+                          <option value="1">{{tableNameHead.city.UA}}</option>
+                          <option value="4">doors</option>
+                          <option value="5">{{tableNameHead.SelfNumberCont.UA}}</option>
+                          <option value="6">{{tableNameHead.Razom_number.UA}}</option>
+                          <option value="3">{{tableNameHead.adress.UA}}</option>
+                          <option value="2">{{tableNameHead.contactor.UA}}</option>
+                          <option value="12">{{tableNameHead.story.UA}}</option>
+                    {% endif %}
+            </select>
 
           </div>
   	<table id = "all_table">
