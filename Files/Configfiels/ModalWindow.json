@@ -78,5 +78,20 @@
     "RU": "Выбор рекламной кампании",
     "EN": "Choosing an advertising campaign",
     "UA": "Вибір рекламної кампанії"
+  },
+  "Reach" : {
+    "RU": "Охват",
+    "EN": "Reach",
+    "UA": "Охоплення"
+  },
+  "Period" : {
+    "RU": "Период",
+    "EN": "Period",
+    "UA": "Період"
+  },
+    "Fruqency" : {
+    "RU": "Частота",
+    "EN": "Frequency",
+    "UA": "Частота"
   }
 }

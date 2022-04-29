@@ -118,5 +118,24 @@
     "RU": "Город",
     "EN": "City",
     "UA": "Місто"
+  },"Reach" : {
+    "RU": "Охват",
+    "EN": "Reach",
+    "UA": "Охоплення"
+  },
+  "Period" : {
+    "RU": "Период",
+    "EN": "Period",
+    "UA": "Період"
+  },
+    "Fruqency" : {
+    "RU": "Частота",
+    "EN": "Frequency",
+    "UA": "Частота"
+  },
+  "ButtonExportExcel" : {
+    "RU": "Экспорт в Excel",
+    "EN": "Export to Excel",
+    "UA": "Експортувати в Excel"
   }
 }

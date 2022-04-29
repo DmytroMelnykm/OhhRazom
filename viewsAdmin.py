@@ -153,7 +153,8 @@ class SettingAdmin(View):
                 'tableNameHeadUser': WorkFile.outLenguage("TableUser"),
                 'BaseObjLen':  WorkFile.outLenguage("SettingPage"),
                 'tableAC': WorkFile.outLenguage("TableAC"),
-                'AllMyUser': PermisionUsersClient.objects.filter(client__founder=request.user.id)
+                'AllMyUser': PermisionUsersClient.objects.filter(client__founder=request.user.id),
+                'CountAC': Rk.objects.filter(client__founder__id = request.user.id).count(),
             })
 
     def post(self,request, *args, **kwargs):
