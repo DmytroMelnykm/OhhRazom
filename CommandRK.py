@@ -246,7 +246,7 @@ class CommandWork(View):
                     "O": dictHead['contactor'],
                 }
                 wb = Workbook()
-                NameRK = Rk.objects.get(id=request.session['currentOutAC'])
+                NameRK = Rk.objects.get(id=request.session['SettingRKName'])
                 strPath = ""  # windows
                 strPath = "/home/acrzmcomua/public_html/"  # linux
                 filename = strPath + f"media/OhhRazom/Excel/{request.user}{NameRK.RK}.xlsx"
@@ -305,7 +305,7 @@ class CommandWork(View):
                 dataExport = request.session['currentDataOut']
                 for count, j in enumerate(dataExport):
                     wbAdmin[f"A{stratCursor}"] = count + 1
-                    tmpInst = RkCompany.objects.filter(rk=int(request.session["currentOutAC"])).get(
+                    tmpInst = RkCompany.objects.filter(rk=int(request.session["SettingRKName"])).get(
                         Razom_number=j['Razom_number_id'])
                     for k in leterPostion:
                         wbAdmin[f"{k}{stratCursor}"].border = Border(top=thin, left=thin, right=thin, bottom=thin)
