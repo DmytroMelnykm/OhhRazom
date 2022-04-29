@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from openpyxl import Workbook
 
-from OhhRazoms.AppFiles.LengualeOut import WorkFile
+from .AppFiles.LengualeOut import WorkFile
 from .models import *
 from django.contrib import messages
 import traceback
