@@ -89,8 +89,8 @@ class ExportExcelAdmin(View):
             }
             wb = Workbook()
             NameRK = Rk.objects.get(id=request.session['currentOutAC'])
-            strPath = ""  # windows
-            strPath = "/home/acrzmcomua/public_html/"  # linux
+            #strPath = ""
+            strPath = "/home/acrzmcomua/public_html/"
             filename = strPath + f"media/OhhRazom/Excel/{request.user}{NameRK.RK}.xlsx"
             wbAdmin = wb.active
             wbAdmin.title = "AC"
