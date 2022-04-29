@@ -99,8 +99,8 @@ class ExportExcelClient(View):
             }
             wb = Workbook()
             NameRK = Rk.objects.get(id=request.session['currentOutAC'])
-            #strPath = ""  # windows
-            strPath = "/home/acrzmcomua/public_html/" #linux
+            #strPath = ""
+            strPath = "/home/acrzmcomua/public_html/"
             filename = strPath + f"media/OhhRazom/Excel/{request.user}{NameRK.RK}.xlsx"
             wbAdmin = wb.active
             wbAdmin.title = "AC"
@@ -254,8 +254,7 @@ class ExportExcelClient(View):
                     wbAdmin[f"N{stratCursor}"] = tmpInst.story.story
                 wbAdmin[f"N{stratCursor}"].fill  = PatternFill("solid",  str(tmpInst.story.color).replace("#",""))
                 stratCursor += 1
-            #strPath = "D:\перевод сайт в\ooh"  # windows
-            strPath = "/home/acrzmcomua/public_html"  # linux
+            strPath = "/home/acrzmcomua/public_html"
             fullPathFile = os.path.join(strPath, "media", "OhhRazom", "Excel",
                                         f'{request.user}{NameRK.RK}.xlsx')
             if os.path.exists(fullPathFile):
