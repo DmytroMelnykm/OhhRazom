@@ -27,6 +27,8 @@ class WorkCurrentRK(View):
                 paramCity = None
 
             #print(WorkFile.outLenguage("PageWorkRK"))
+            dataAll = RkCompany.objects.filter(rk=request.session['SettingRKName'])
+            request.session['currentDataOut'] = list(dataAll.values())
             return render(request, self.template_name, {
                 'Program' : RkCompany.objects.filter(rk= request.session['SettingRKName']),
                 'NameRK' : Rk.objects.get(id=request.session['SettingRKName']),
