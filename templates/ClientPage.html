@@ -379,7 +379,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">RF</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Reach and Frequency</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -398,13 +398,31 @@
                                 {% endif %}
                             </th>
                             <th>
-                                Reach
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Reach.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Reach.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Reach.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Period.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Period.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Period.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Fruqency.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Fruqency.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Fruqency.UA}}
+                                {% endif %}
                             </th>
                         </tr>
                 </thead>
@@ -628,7 +646,7 @@
   </div>
 
   <!-- Фильтр по Типу-->
-  <div class="modal fade" id="type" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="type" tabindex="-1" role="dialаog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -909,7 +927,7 @@
                 </button>
                 </form>
                     <button class="btn btn-{{color.color_bootstrap}} mr-auto  center-block btn-block" type="button" data-toggle="modal" data-target="#Reach">
-                      RF
+                      Reach and Frequency
                     </button>
                   <button type="button" class="btn btn-{{color.color_bootstrap}} mr-auto  btn-block" data-toggle="modal" data-target="#chose_rk">
                             {% if lenguage == 'RU' %}

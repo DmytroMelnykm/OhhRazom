@@ -333,7 +333,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">RF</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Reach and Frequency</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -351,14 +351,32 @@
                                     {{TranslateBody.TextReachCity.UA}}
                                 {% endif %}
                             </th>
-                            <th>
-                                Reach
+                           <th>
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Reach.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Reach.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Reach.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Period.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Period.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Period.UA}}
+                                {% endif %}
                             </th>
                             <th>
-                                Frequency
+                                {% if lenguage == 'RU' %}
+                                    {{TranslateBody.Fruqency.RU}}
+                                {% elif lenguage == 'EN' %}
+                                    {{TranslateBody.Fruqency.EN}}
+                                {% elif lenguage == 'UA' %}
+                                    {{TranslateBody.Fruqency.UA}}
+                                {% endif %}
                             </th>
                         </tr>
                 </thead>
