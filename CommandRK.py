@@ -153,7 +153,7 @@ class CommandWork(View):
                 if request.POST.get("choise_type") == "doors":
                     for i in OutputWindow.numberIn(request.POST.get("area_mark")):
                         try:
-                            tmpRKNumb = RkCompany.objects.get(Razom_number__doors=i)
+                            tmpRKNumb = RkCompany.objects.filter(rk=request.session['SettingRKName']).get(Razom_number__doors=i)
                             tmpRKNumb.delete()
                         except Exception as e:
                             print('Ошибка:\n', traceback.format_exc())
@@ -162,7 +162,7 @@ class CommandWork(View):
                 elif request.POST.get("choise_type") == "Razom_number":
                     for i in OutputWindow.numberIn(request.POST.get("area_mark")):
                         try:
-                            tmpRKNumb = RkCompany.objects.get(Razom_number__Razom_number=int(i))
+                            tmpRKNumb = RkCompany.objects.filter(rk=request.session['SettingRKName']).get(Razom_number__Razom_number=int(i))
                             tmpRKNumb.delete()
                         except Exception as e:
                             print('Ошибка:\n', traceback.format_exc())
