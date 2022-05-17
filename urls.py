@@ -19,6 +19,7 @@ from .viewsData import *
 
 urlpatterns = [
     path('', EnterView.as_view(), name='Enter'),
+    path('update/doors/', UpdateDoorsPage.as_view(), name='UpdateDoorsGo'),
     path('ChangeLenguage', ChangeLengEnterPage.as_view()),
     path('Autentificate/', NavigationPermision.as_view(), name="Autentificate"),
     path('admin/setting/', SettingAdmin.as_view(), name="setting"),
