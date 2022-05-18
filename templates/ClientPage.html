@@ -927,7 +927,13 @@
                 </button>
                 </form>
                     <button class="btn btn-{{color.color_bootstrap}} mr-auto  center-block btn-block" type="button" data-toggle="modal" data-target="#Reach">
-                      Reach and Frequency
+                        {% if lenguage == 'RU' %}
+                        {{TranslateBody.ButtonRF.RU}}
+                    {% elif lenguage == 'EN' %}
+                        {{TranslateBody.ButtonRF.EN}}
+                    {% elif lenguage == 'UA' %}
+                        {{TranslateBody.ButtonRF.UA}}
+                    {% endif %}
                     </button>
                   <button type="button" class="btn btn-{{color.color_bootstrap}} mr-auto  btn-block" data-toggle="modal" data-target="#chose_rk">
                             {% if lenguage == 'RU' %}
