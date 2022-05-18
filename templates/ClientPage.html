@@ -4,7 +4,7 @@
     	<title>{{NameAgancy.client.agancy}}</title>
 		<meta charset="UTF-8">
 		<meta http-equiv=Pragma content=no cache>
-		<link rel="shortcut icon" href="{% static 'OhhRazom/image/icons/Logo_{{NameAgancy.client.agancy}}.png' %}" type="img/logo.png">
+		<link rel="shortcut icon" href="{% static 'OhhRazom/image/icons/Logo_' %}{{ NameAgancy.client.agancy }}.png" type="img/logo.png">
 			<link rel="stylesheet" href="{% static 'OhhRazom/style/exit_data/js/lib_map/leaflet.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'OhhRazom/style/exit_data/css/for_table.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'OhhRazom/style/exit_data/css/for_img.css' %}">
@@ -328,7 +328,7 @@
       <div class="navbar navbar-dark bg-{{color.color_bootstrap}} box-shadow" >
         <div class="container-fluid d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <img src = "{% static 'OhhRazom/image/icons/logo_' %}{{NameAgancy.client.agancy}}.png"  width="7%" height="7%">
+            <img src = "{% static 'OhhRazom/image/icons/Logo_' %}{{NameAgancy.client.agancy}}.png"  width="7%" height="7%">
             <strong>{{NameAgancy.client.agancy}}</strong>
           </a>
             <div class="row">
