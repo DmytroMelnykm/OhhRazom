@@ -73,6 +73,10 @@ class Filter(View):
             except:
                 pass
             try:
+                del request.session['filterStory']
+            except:
+                pass
+            try:
                 del request.session['filterFormat']
             except:
                 pass
