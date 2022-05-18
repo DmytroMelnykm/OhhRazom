@@ -908,6 +908,7 @@
                                                     {{TranslateBody.Stories.UA}}
                                                 {% endif %}</h4></p>
                 <form  method="POST" action = "/filter/StoryFilter">
+                    {% csrf_token %}
                 <div class ="border border-dark">
                     {% for i in filterStory%}
                         <input type="checkbox" class = "form-check-input ml-2" name = "point" value = "{{i.id}}">
