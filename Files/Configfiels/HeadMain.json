@@ -31,7 +31,7 @@
   "TextForButtonExit" : {
     "RU": "Для выхода нажмите на кнопку",
     "EN": "To exit press the button",
-    "UA": "To exit, press the button"
+    "UA": "Для виходу натисніть кнопку"
   },
   "ButtonExit" : {
     "RU": "Выход",
