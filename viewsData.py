@@ -73,12 +73,15 @@ class ImportDBContactor(View):
     def get(self, request, *args, **kwargs):
         data = WorkFiels.outToDB('Districcontactor')
         for i in data:
-            ContractorPlanes(
-                id=int(i),
-                Contractor_UA=data[i]["UA"],
-                Contractor_RU=data[i]["RU"],
-                Contractor_EN=data[i]["EN"]
-            ).save()
+            try:
+                ContractorPlanes(
+                    id=int(i),
+                    Contractor_UA=data[i]["UA"],
+                    Contractor_RU=data[i]["RU"],
+                    Contractor_EN=data[i]["EN"]
+                ).save()
+            except:
+                print(data[i]["RU"], " Уже есть")
         print("Contactor Ready!")
         return HttpResponseRedirect(reverse_lazy('Enter'))
 
