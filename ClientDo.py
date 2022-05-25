@@ -160,7 +160,7 @@ class ExportExcelClient(View):
                 tmpInst = RkCompany.objects.filter(rk=int(request.session["currentOutAC"])).get(Razom_number=j['Razom_number_id'])
                 for k in leterPostion:
                     wbAdmin[f"{k}{stratCursor}"].border = Border(top=thin, left=thin, right=thin, bottom=thin)
-                    wbAdmin[f"{k}{stratCursor}"].alignment = Alignment(horizontal='center')
+                    wbAdmin[f"{k}{stratCursor}"].alignment = Alignment(horizontal='left')
                 if tmpInst.Grade == 1:
                     for k in leterPostion:
                         wbAdmin[f'{k}{stratCursor}'].fill  = PatternFill("solid", "32CD32")
@@ -204,6 +204,7 @@ class ExportExcelClient(View):
                         f"L{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imagePhoto}"
                     wbAdmin[f"L{stratCursor}"] = "Photo"
                     wbAdmin[f"L{stratCursor}"].style = "Hyperlink"
+                    wbAdmin[f"L{stratCursor}"].border = Border(top=thin, left=thin, right=thin, bottom=thin)
                     wbAdmin[
                         f"M{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imageShema}"
                     wbAdmin[f"M{stratCursor}"] = "Scheme"
@@ -225,6 +226,7 @@ class ExportExcelClient(View):
                         f"L{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imagePhoto}"
                     wbAdmin[f"L{stratCursor}"] = "Фото"
                     wbAdmin[f"L{stratCursor}"].style = "Hyperlink"
+                    wbAdmin[f"L{stratCursor}"].border = Border(top=thin, left=thin, right=thin, bottom=thin)
                     wbAdmin[
                         f"M{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imageShema}"
                     wbAdmin[f"M{stratCursor}"] = "Схема"
@@ -246,6 +248,7 @@ class ExportExcelClient(View):
                         f"L{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imagePhoto}"
                     wbAdmin[f"L{stratCursor}"] = "Фото"
                     wbAdmin[f"L{stratCursor}"].style = "Hyperlink"
+                    wbAdmin[f"L{stratCursor}"].border = Border(top=thin, left=thin, right=thin, bottom=thin)
                     wbAdmin[
                         f"M{stratCursor}"].hyperlink = f"https://ac.rzm.com.ua/media/{tmpInst.Razom_number.imageShema}"
                     wbAdmin[f"M{stratCursor}"] = "Схема"
