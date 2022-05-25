@@ -16,12 +16,15 @@ class ImportDBCity(View):
     def get(self, request, *args, **kwargs):
         dataCity = WorkFiels.outToDB('Districcity')
         for i in dataCity:
-            CityPlanes(
-                id=int(i),
-                city_standart_UA=dataCity[i]["UA"],
-                city_standart_RU=dataCity[i]["RU"],
-                city_standart_EN=dataCity[i]["EN"]
-            ).save()
+            try:
+                CityPlanes(
+                    id=int(i),
+                    city_standart_UA=dataCity[i]["UA"],
+                    city_standart_RU=dataCity[i]["RU"],
+                    city_standart_EN=dataCity[i]["EN"]
+                ).save()
+            except:
+                print(dataCity[i]["RU"], " Уже есть")
         print("City Ready!")
         return HttpResponseRedirect(reverse_lazy('Side'))
 
