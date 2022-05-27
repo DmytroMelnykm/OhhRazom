@@ -183,11 +183,12 @@ class ImportDBFinall(View):
 class FixProblem(View):
 
     def get(self,request):
-        instanceTotal = Totalplanes.objects.filter(city_standart__city_standart_RU = 'Ивано-Франковск')
+        instanceTotal = Totalplanes.objects.filter(city_standart__city_standart_RU = 'Ужгород')
         for i in instanceTotal:
             i.imagePhoto=f'OhhRazom/image/photo/{i.Razom_number}.jpg'
             i.imageShema = f'OhhRazom/image/shema/{i.Razom_number}.jpg'
             i.save()
+        return HttpResponseRedirect(reverse_lazy('Enter'))
 
 
 
