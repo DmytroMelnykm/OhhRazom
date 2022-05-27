@@ -53,6 +53,7 @@ urlpatterns = [
     path('InputToDb/Contactor/', ImportDBContactor.as_view(), name='Contactor'),
     path('InputToDb/adress/', ImportDBadress.as_view()),
     path('InputToDb/loc/', ImportDBloc.as_view()),
+    path('Change/Img/in/', FixProblem.as_view()),
 ]
 
 """
