@@ -22,37 +22,31 @@ class Filter(View):
             request.session['filterCity'] = request.POST.getlist('for_city')
             return HttpResponseRedirect(reverse_lazy('Autentificate'))
         elif type == "ChooseRK":
-            if request.POST.get('ch_rk') == "null":
-                try:
-                    del request.session['currentOutAC']
-                except:
-                    pass
-                try:
-                    del request.session['filterCity']
-                except:
-                    pass
-                try:
-                    del request.session['filterType']
-                except:
-                    pass
-                try:
-                    del request.session['filterFormat']
-                except:
-                    pass
-                try:
-                    del request.session['advancedSearchType']
-                except:
-                    pass
-                try:
-                    del request.session['advancedSearchCodes']
-                except:
-                    pass
-                try:
-                    del request.session['currentDataOut']
-                except:
-                    pass
-            else:
-                request.session['currentOutAC'] = request.POST.get('ch_rk')
+            try:
+                del request.session['currentOutAC']
+            except:
+                pass
+            try:
+                del request.session['filterCity']
+            except:
+                pass
+            try:
+                del request.session['filterType']
+            except:
+                pass
+            try:
+                del request.session['filterFormat']
+            except:
+                pass
+            try:
+                del request.session['advancedSearchType']
+            except:
+                pass
+            try:
+                del request.session['advancedSearchCodes']
+            except:
+                pass
+            request.session['currentOutAC'] = request.POST.get('ch_rk')
             return HttpResponseRedirect(reverse_lazy('Autentificate'))
         elif type == "type":
             request.session['filterType'] = request.POST.getlist('for_type')
