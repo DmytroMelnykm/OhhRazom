@@ -132,4 +132,7 @@ class ReachCity(models.Model):
         return str(self.city) + " " + str(self.rk)
 
 
+class sm(models.Model):
+    isnt = models.CharField(max_length=40)
+
 

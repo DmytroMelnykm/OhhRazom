@@ -21,5 +21,4 @@ admin.site.register(ReachCity)
 
 
 
-
 # Register your models here.
